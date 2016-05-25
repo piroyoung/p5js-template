@@ -11,17 +11,11 @@ function draw() {
     var diffX = mouseX - prevX;
     var diffY = mouseY - prevY;
 
-    if(mouseIsPressed) {
-        fill(0);
-    } else {
-        fill(255)
-    }
-
     ellipse(
         mouseX,
         mouseY,
-        diffX + 30,
-        diffY + 30
+        (diffX^2 + 0.5*diffY^2)^0.5 + 30,
+        (diffY^2 + 0.5*diffX^2)^0.5 + 30
     );
 
     prevX = mouseX

@@ -12,7 +12,21 @@ def callback1(path):
 
 @get('/')
 def callback2():
-    return TEMPLATE_TOP.render({})
+    return TEMPLATE_TOP.render({
+        'title': 'hello!! p5.js',
+        'description': 'My first p5.js sketch book.',
+        'book': 'sketch.js',
+    })
+
+
+@get('/graph')
+def callback2():
+    return TEMPLATE_TOP.render({
+        'title': 'Graph rendering sample',
+        'description': 'Preparation for Visualizing Neural Network',
+        'book': 'graph.js',
+    })
+
 
 if __name__ == '__main__':
     run()
